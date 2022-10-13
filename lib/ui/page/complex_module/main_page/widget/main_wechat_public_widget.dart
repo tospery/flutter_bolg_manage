@@ -4,9 +4,7 @@ import 'package:blog/res/strings.dart';
 import 'package:blog/res/style.dart';
 import 'package:blog/ui/page/complex_module/main_page/main_controller.dart';
 import 'package:blog/ui/page/complex_module/main_page/widget/main_wechat_public_item.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 
 import 'main_wechat_public_widget_end.dart';
@@ -15,6 +13,7 @@ import 'main_wechat_public_widget_end.dart';
 /// @date : 2021/09/08
 /// @name : jhf
 /// @description :首页 微信公众号Widget
+// ignore: must_be_immutable
 class WechatPublicWidget extends StatefulWidget {
   ///微信公众号数据
   List<WechatPublic> wechatPublic = [];
@@ -128,6 +127,7 @@ class _WechatPublicWidgetState extends State<WechatPublicWidget>
                         initAnimation(false, milliseconds: 1000);
                         sizeController?.forward();
                         Get.find<MainController>().update();
+
                         ///动画监听
                         sizeAnimation?.addStatusListener((state) {
                           if (state == AnimationStatus.completed) {

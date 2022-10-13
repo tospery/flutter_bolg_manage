@@ -1,7 +1,4 @@
-
-
 import 'dart:io';
-import 'package:blog/util/toast_util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -9,10 +6,7 @@ import 'package:path_provider/path_provider.dart';
 /// @date : 2021/08/25
 /// @name : jhf
 /// @description :缓存工具类
-class CacheUtil{
-
-
-
+class CacheUtil {
   ///加载缓存
   static Future<double> loadCache() async {
     try {
@@ -25,11 +19,10 @@ class CacheUtil{
     }
   }
 
-
-
   /// 递归方式 计算文件的大小
   /// [file] 文件系统实体类
-  static Future<double> _getTotalSizeOfFilesInDir(final FileSystemEntity file) async {
+  static Future<double> _getTotalSizeOfFilesInDir(
+      final FileSystemEntity file) async {
     try {
       if (file is File) {
         int length = await file.length();
@@ -50,7 +43,6 @@ class CacheUtil{
     }
   }
 
-
   ///清除缓存
   static Future<bool> clearCache() async {
     try {
@@ -64,10 +56,9 @@ class CacheUtil{
     }
   }
 
-
   ///递归方式删除目录
   ///[file]文件目录
-  static Future<Null> delDir(FileSystemEntity file) async {
+  static Future<void> delDir(FileSystemEntity file) async {
     try {
       if (file is Directory) {
         final List<FileSystemEntity> children = file.listSync();
@@ -80,7 +71,6 @@ class CacheUtil{
       debugPrint(e.toString());
     }
   }
-
 
   ///byte 转换为实际大小，并保留小数位
   ///[byteSize] 大小
@@ -101,6 +91,4 @@ class CacheUtil{
       return '${size}GB';
     }
   }
-
-
 }

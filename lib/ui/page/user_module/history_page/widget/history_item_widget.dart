@@ -1,28 +1,27 @@
 import 'package:blog/model/project_model.dart';
 import 'package:blog/res/colors.dart';
 import 'package:blog/res/style.dart';
-import 'package:blog/routes/routes.dart';
 import 'package:blog/util/web_util.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 /// @class : HistoryItemWidget
 /// @date : 2021/9/9
 /// @name : jhf
 /// @description :浏览历史 item
+// ignore: must_be_immutable
 class HistoryItemWidget extends StatelessWidget {
   ///排名信息
   ProjectDetail detail;
 
   Function(bool) onResult;
 
-  HistoryItemWidget({Key? key, required this.detail , required this.onResult}) : super(key: key);
+  HistoryItemWidget({Key? key, required this.detail, required this.onResult})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => WebUtil.toWebPage(detail , onResult: onResult),
+      onTap: () => WebUtil.toWebPage(detail, onResult: onResult),
       child: Container(
         width: double.infinity,
         margin: const EdgeInsets.symmetric(horizontal: 10),

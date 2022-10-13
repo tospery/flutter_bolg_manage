@@ -7,7 +7,6 @@ import 'package:blog/res/style.dart';
 import 'package:blog/ui/page/webview_page/webview_controller.dart';
 import 'package:blog/util/navigate_util.dart';
 import 'package:blog/util/toast_util.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_svg/svg.dart';
@@ -45,18 +44,20 @@ class WebViewBottomWidget extends GetCommonView<WebController> {
           InkWell(
             onTap: () => controller.collectArticle(),
             child: Obx(() => SvgPicture.asset(
-              controller.isCollect.value ? R.assetsImagesCollect : R.assetsImagesCollectQuit,
-              width: 24,
-            )),
+                  controller.isCollect.value
+                      ? R.assetsImagesCollect
+                      : R.assetsImagesCollectQuit,
+                  width: 24,
+                )),
           ),
           Box.hBox20,
           InkWell(
-            onTap: ()=> ToastUtils.show(StringStyles.notSupportLikes.tr),
-            child: const Icon(
-            Icons.thumb_up_alt_outlined,
-            color: ColorStyle.color_24CF5F,
-            size: 24,
-          )),
+              onTap: () => ToastUtils.show(StringStyles.notSupportLikes.tr),
+              child: const Icon(
+                Icons.thumb_up_alt_outlined,
+                color: ColorStyle.color_24CF5F,
+                size: 24,
+              )),
           Box.hBox20,
           InkWell(
             onTap: () => Navigate.launchInBrowser(controller.detail.link),

@@ -2,7 +2,6 @@ import 'package:blog/base/get/controller/base_page_controller.dart';
 import 'package:blog/model/collect_model.dart';
 import 'package:blog/util/ext/refresher_extension.dart';
 import 'package:blog/widget/pull_smart_refresher.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 /// @class : CollectController
@@ -35,11 +34,8 @@ class CollectController extends BaseGetPageController {
 
   ///取消收藏单个
   ///[index] 索引
-  void notifyPart(int index){
+  void notifyPart(int index) {
     collectList.removeAt(index);
     update();
   }
-
-
-
 }

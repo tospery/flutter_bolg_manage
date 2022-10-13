@@ -21,12 +21,13 @@ class BannerWidget extends StatefulWidget {
   ///滑动曲线
   final Curve curve;
 
-  BannerWidget(
+  const BannerWidget(
     this.banner, {
+    Key? key,
     this.height = 200,
     required this.onTap,
     this.curve = Curves.linear,
-  });
+  }) : super(key: key);
 
   @override
   _BannerState createState() => _BannerState();
@@ -152,11 +153,11 @@ class _BannerState extends State<BannerWidget> {
       _timer = null;
     }
     _timer ??= Timer.periodic(const Duration(seconds: 3), (t) {
-      if(widget.banner.isEmpty){
+      if (widget.banner.isEmpty) {
         return;
       }
       _curIndex++;
-      if (!_pageController.hasClients){
+      if (!_pageController.hasClients) {
         return;
       }
       _pageController.animateToPage(

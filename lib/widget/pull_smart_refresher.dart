@@ -1,5 +1,4 @@
 import 'package:blog/base/get/controller/base_page_controller.dart';
-import 'package:blog/res/colors.dart';
 import 'package:blog/res/r.dart';
 import 'package:blog/res/strings.dart';
 import 'package:blog/res/style.dart';
@@ -27,6 +26,7 @@ enum Refresh {
 /// @description :上拉刷新、下拉加载、空白页加载动画
 /// 通过在基类BaseGetController中维护上拉刷新、下拉加载、控制器等等状态
 /// 不需要暴露给使用者，当然，此方法只能使用Getx框架有效
+// ignore: must_be_immutable
 class RefreshWidget<Controller extends BaseGetPageController>
     extends StatefulWidget {
   RefreshWidget({

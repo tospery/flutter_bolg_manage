@@ -7,14 +7,12 @@ import 'package:blog/widget/_toolbar.dart';
 import 'package:blog/widget/pull_smart_refresher.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 /// @class : PointsPage
 /// @date : 2021/08/25
 /// @name : jhf
 /// @description :积分明细 View层
 class PointsPage extends GetCommonView<PointsController> {
-
   const PointsPage({Key? key}) : super(key: key);
 
   @override
@@ -33,15 +31,15 @@ class PointsPage extends GetCommonView<PointsController> {
             Expanded(
               child: RefreshWidget<PointsController>(
                   child: ListView.builder(
-                    padding: EdgeInsets.zero,
-                    shrinkWrap: true,
-                    itemCount: controller.pointsList.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return PointsItemWidget(
-                        points: controller.pointsList[index],
-                      );
-                    },
-                  )),
+                padding: EdgeInsets.zero,
+                shrinkWrap: true,
+                itemCount: controller.pointsList.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return PointsItemWidget(
+                    points: controller.pointsList[index],
+                  );
+                },
+              )),
             ),
           ],
         ),

@@ -1,7 +1,6 @@
 import 'package:blog/base/get/getx_controller_inject.dart';
 import 'package:blog/model/request_register.dart';
 import 'package:blog/util/save/sp_util.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 /// @class : MyController
@@ -14,6 +13,7 @@ class MyController extends BaseGetController {
 
   ///浏览历史长度
   RxInt browseHistory = 0.obs;
+
   ///分享的长度
   RxInt share = 0.obs;
 
@@ -39,7 +39,7 @@ class MyController extends BaseGetController {
 
   /// 刷新分享的文章数据
   void notifyShareArticle() {
-    request.requestShareArticleList(1 , length: (size) {
+    request.requestShareArticleList(1, length: (size) {
       share.value = size;
     });
   }

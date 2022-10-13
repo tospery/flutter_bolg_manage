@@ -3,7 +3,6 @@ import 'package:blog/res/colors.dart';
 import 'package:blog/res/decoration_style.dart';
 import 'package:blog/res/r.dart';
 import 'package:blog/res/style.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -11,6 +10,7 @@ import 'package:flutter_svg/svg.dart';
 /// @date : 2021/9/8
 /// @name : jhf
 /// @description :搜索页面 热搜榜列表Item
+// ignore: must_be_immutable
 class SearchHotWordItem extends StatelessWidget {
   ///列表数据
   HotWord item;
@@ -36,7 +36,8 @@ class SearchHotWordItem extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
               child: Text(
                 '$index',
-                style: index >3 ? Styles.style_black_12 :Styles.style_white_12,
+                style:
+                    index > 3 ? Styles.style_black_12 : Styles.style_white_12,
               )),
         ),
         Box.hBox5,
@@ -60,10 +61,14 @@ class SearchHotWordItem extends StatelessWidget {
   ///获取热搜榜中的背景
   Color getBgColor() {
     switch (index) {
-      case 1:return Colors.red;
-      case 2:return ColorStyle.color_FE8C28;
-      case 3:return ColorStyle.color_FFAE2E;
-      default : return ColorStyle.colorShadow;
+      case 1:
+        return Colors.red;
+      case 2:
+        return ColorStyle.color_FE8C28;
+      case 3:
+        return ColorStyle.color_FFAE2E;
+      default:
+        return ColorStyle.colorShadow;
     }
   }
 }

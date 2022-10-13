@@ -4,11 +4,8 @@ import 'package:blog/res/strings.dart';
 import 'package:blog/res/style.dart';
 import 'package:blog/ui/page/search_page/search_controller.dart';
 import 'package:blog/ui/page/search_page/widget/search_hotword_item.dart';
-import 'package:blog/util/keyboard_util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
@@ -17,8 +14,6 @@ import 'package:get/get.dart';
 /// @name : jhf
 /// @description :搜索页面 搜索热词
 class SearchHotWordWidget extends GetCommonView<SearchController> {
-
-
   const SearchHotWordWidget({
     Key? key,
   }) : super(key: key);
@@ -57,7 +52,8 @@ class SearchHotWordWidget extends GetCommonView<SearchController> {
                       crossAxisCount: 2, childAspectRatio: 5 / 1),
                   itemBuilder: (BuildContext context, int index) {
                     return GestureDetector(
-                      onTap: ()=> controller.hotOrHistorySearch(controller.hotWord[index].name),
+                      onTap: () => controller
+                          .hotOrHistorySearch(controller.hotWord[index].name),
                       child: SearchHotWordItem(
                         item: controller.hotWord[index],
                         index: index + 1,

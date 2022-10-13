@@ -1,15 +1,11 @@
-import 'package:blog/base/get/get_extension.dart';
 import 'package:blog/http/request_repository.dart';
-import 'package:blog/res/button_style.dart';
 import 'package:blog/res/colors.dart';
 import 'package:blog/res/decoration_style.dart';
-import 'package:blog/res/r.dart';
 import 'package:blog/res/strings.dart';
 import 'package:blog/res/style.dart';
 import 'package:blog/util/formatter/customized_length_formatter.dart';
 import 'package:blog/util/navigate_util.dart';
 import 'package:blog/util/toast_util.dart';
-import 'package:blog/widget/ripple_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,6 +15,7 @@ import 'dialog_base.dart';
 /// @date : 2021/9/13
 /// @name : jhf
 /// @description : 分享文章弹窗
+// ignore: must_be_immutable
 class ShareArticleDialog extends StatelessWidget {
   ///分享的链接
   String url = 'https://www.baidu.com';

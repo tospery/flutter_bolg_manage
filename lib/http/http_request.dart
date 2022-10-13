@@ -1,8 +1,6 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:blog/model/request_register.dart';
-import 'package:blog/util/save/sp_key.dart';
 import 'package:blog/util/save/sp_util.dart';
 import 'package:dio/dio.dart';
 import 'package:blog/http/http_exception.dart';
@@ -26,9 +24,6 @@ typedef Fail = Function(int code, String msg);
 /// @name : jhf
 /// @description :请求工具
 class HttpRequest {
-  ///是否携带token校验
-  static const String _token = '';
-
   ///全局Dia对象
   static Dio? _dio;
 
@@ -79,10 +74,9 @@ class HttpRequest {
       }
       Dio _dio = createInstance(isJson);
       Response response = await _dio.request(path,
-          data: params, options: Options(
-            method: _methodValues[method],
-            headers: _headerToken()
-          ));
+          data: params,
+          options:
+              Options(method: _methodValues[method], headers: _headerToken()));
       if (success != null) {
         success(response.data);
       }
@@ -95,19 +89,18 @@ class HttpRequest {
 }
 
 /// 请求时添加cookie
-Map<String, dynamic>? _headerToken(){
+Map<String, dynamic>? _headerToken() {
   /// 自定义Header,如需要添加token信息请调用此参数
   UserEntity? info = SpUtil.getUserInfo();
-  if(info == null){
+  if (info == null) {
     return null;
   }
   Map<String, dynamic> httpHeaders = {
-    'Cookie': 'loginUserName=${info.username};loginUserPassword=${info.password}',
+    'Cookie':
+        'loginUserName=${info.username};loginUserPassword=${info.password}',
   };
   return httpHeaders;
 }
-
-
 
 /// 错误回调
 /// [code] 错误代码
@@ -130,6 +123,7 @@ Map<String, dynamic> parseData(String data) {
 }
 
 ///请求类型枚举
+// ignore: constant_identifier_names
 enum Method { GET, POST, DELETE, PUT, PATCH, HEAD }
 
 ///请求类型值
@@ -141,6 +135,3 @@ const _methodValues = {
   Method.PATCH: "patch",
   Method.HEAD: "head",
 };
-
-
-

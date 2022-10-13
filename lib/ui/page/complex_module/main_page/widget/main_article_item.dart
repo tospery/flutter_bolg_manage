@@ -1,7 +1,6 @@
 import 'package:blog/model/project_model.dart';
 import 'package:blog/res/decoration_style.dart';
 import 'package:blog/res/style.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 
@@ -9,6 +8,7 @@ import 'package:flutter_html/flutter_html.dart';
 /// @date : 2021/9/7
 /// @name : jhf
 /// @description :搜索页面 搜索结果列表Item
+// ignore: must_be_immutable
 class MainArticleItem extends StatelessWidget {
   ///列表数据
   ProjectDetail item;
@@ -38,10 +38,11 @@ class MainArticleItem extends StatelessWidget {
                   visible: index <= 2,
                   child: Container(
                     margin: const EdgeInsets.only(top: 4),
-                    padding: const EdgeInsets.symmetric(horizontal: 3 , vertical: 2),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 3, vertical: 2),
                     decoration: DecorationStyle.customize(Colors.red, 3),
                     child: const Text(
-                        '荐',
+                      '荐',
                       style: Styles.style_white_10,
                     ),
                   ))
@@ -82,8 +83,7 @@ class MainArticleItem extends StatelessWidget {
 
   /// 获取第一行内部边距的Text
   ///[title] 标题
-  String getPaddingText(String title ){
-    return index <= 2 ? "     $title" : title ;
+  String getPaddingText(String title) {
+    return index <= 2 ? "     $title" : title;
   }
-
 }

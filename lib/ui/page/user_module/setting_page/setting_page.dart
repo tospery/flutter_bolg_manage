@@ -18,40 +18,34 @@ class SettingPage extends GetCommonView<SettingController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Container(
-        child: Column(
-          children: [
-            ToolBar(
-              title: StringStyles.settingTitle.tr,
-            ),
-            DividerStyle.divider1Half,
-            ListTile(
-              onTap: () => Get.toNamed(Routes.settingLanguagePage),
-              title: Text(StringStyles.settingLanguage.tr),
-              trailing: const Icon(Icons.keyboard_arrow_right),
-            ),
-
-            ListTile(
-              onTap: () => controller.clearCacheFile(),
-              title: Text(StringStyles.settingCache.tr),
-              trailing:Obx(() => Text(
+      body: Column(
+        children: [
+          ToolBar(
+            title: StringStyles.settingTitle.tr,
+          ),
+          DividerStyle.divider1Half,
+          ListTile(
+            onTap: () => Get.toNamed(Routes.settingLanguagePage),
+            title: Text(StringStyles.settingLanguage.tr),
+            trailing: const Icon(Icons.keyboard_arrow_right),
+          ),
+          ListTile(
+            onTap: () => controller.clearCacheFile(),
+            title: Text(StringStyles.settingCache.tr),
+            trailing: Obx(() => Text(
                   controller.cache.value,
-                style: Styles.style_6A6969_14,
-              )),
+                  style: Styles.style_6A6969_14,
+                )),
+          ),
+          DividerStyle.divider20Half,
+          ListTile(
+            onTap: () => controller.exitLoginState(),
+            title: Container(
+              alignment: Alignment.center,
+              child: Text(StringStyles.settingExitLogin.tr),
             ),
-
-            DividerStyle.divider20Half,
-
-            ListTile(
-              onTap: () => controller.exitLoginState(),
-              title: Container(
-                alignment: Alignment.center,
-                child: Text(StringStyles.settingExitLogin.tr),
-              ),
-            ),
-
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

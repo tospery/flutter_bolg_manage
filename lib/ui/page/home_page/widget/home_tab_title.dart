@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// @class : TabTitleIcon
@@ -6,6 +5,7 @@ import 'package:flutter/material.dart';
 /// @name : jhf
 ///
 /// @description :文字加图标的Tab
+// ignore: must_be_immutable
 class TabTitleIcon extends StatelessWidget {
   String title = "";
   IconData? icon;

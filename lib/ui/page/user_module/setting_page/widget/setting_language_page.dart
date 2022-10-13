@@ -26,17 +26,19 @@ class _SettingLanguagePageState extends State<SettingLanguagePage> {
 
   @override
   void initState() {
+    super.initState();
+
     ///读取语言存储
     var languageModel = SpUtil.getLanguage();
     if (languageModel == null) {
       language[0].isSelect = true;
     } else {
       ///找到当前选中的语言
-      language.forEach((item) {
+      for (var item in language) {
         if (item.name == languageModel.name) {
           item.isSelect = true;
         }
-      });
+      }
     }
   }
 

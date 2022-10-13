@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 /// @date : 2021/09/08
 /// @name : jhf
 /// @description :首页 微信公众号右侧侧滑按钮
+// ignore: must_be_immutable
 class WechatPublicEndWidget extends StatefulWidget {
   ///图标
   IconData? icon;
@@ -42,25 +43,23 @@ class _WechatPublicEndWidgetState extends State<WechatPublicEndWidget>
   initAnimation(bool isFirst, {int milliseconds = 300}) {
     transferController = AnimationController(
         vsync: this, duration: Duration(milliseconds: milliseconds));
-    transferAnimation = Tween(
-            begin:  Offset.zero,
-            end:  const Offset(0.7, 0))
+    transferAnimation = Tween(begin: Offset.zero, end: const Offset(0.7, 0))
         .animate(transferController!);
   }
 
   @override
   Widget build(BuildContext context) {
-    if(widget.show){
+    if (widget.show) {
       transferController?.reverse();
-    }else{
+    } else {
       transferController?.forward();
     }
-    return  SlideTransition(
-        position: transferAnimation!,
-        child: GestureDetector(
-          behavior: HitTestBehavior.opaque,
-          onTap: widget.onTap,
-          child: Container(
+    return SlideTransition(
+      position: transferAnimation!,
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: widget.onTap,
+        child: Container(
           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
           decoration: ShadowStyle.white12CircleBorder(
               const BorderRadius.only(

@@ -1,28 +1,20 @@
-
 import 'package:blog/model/wechat_public_mode.dart';
 import 'package:blog/res/r.dart';
 import 'package:blog/res/shadow_style.dart';
 import 'package:blog/res/style.dart';
 import 'package:blog/ui/page/my_page/widget/head_circle_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
-
 
 /// @class : WechatPublicItem
 /// @date : 2021/09/08
 /// @name : jhf
 /// @description :首页 微信公众号Item
-class WechatPublicItem extends StatelessWidget{
-
+// ignore: must_be_immutable
+class WechatPublicItem extends StatelessWidget {
   WechatPublic item;
 
-
-   WechatPublicItem({
-    Key? key ,
-    required this.item
-  }) : super(key: key);
+  WechatPublicItem({Key? key, required this.item}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,21 +26,20 @@ class WechatPublicItem extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              child: R.wechatPublic.containsKey(item.id) ?
-              ClipRRect(
-                borderRadius: BorderRadius.circular(50),
-                child:Container(
-                  width: 64,
-                  height: 64,
-                  color: Colors.white,
-                  child:  Image.asset(
-                      R.wechatPublic[item.id] ?? ""
-                  ) ,
-                ) ,
-              ) :HeadCircleWidget(
-                width: 64,
-                height: 64,
-              ),
+              child: R.wechatPublic.containsKey(item.id)
+                  ? ClipRRect(
+                      borderRadius: BorderRadius.circular(50),
+                      child: Container(
+                        width: 64,
+                        height: 64,
+                        color: Colors.white,
+                        child: Image.asset(R.wechatPublic[item.id] ?? ""),
+                      ),
+                    )
+                  : HeadCircleWidget(
+                      width: 64,
+                      height: 64,
+                    ),
               decoration: ShadowStyle.black12Circle40(),
             ),
             Box.vBox15,
@@ -70,5 +61,4 @@ class WechatPublicItem extends StatelessWidget{
           ],
         ));
   }
-
 }

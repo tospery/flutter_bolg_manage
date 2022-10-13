@@ -1,7 +1,6 @@
 import 'package:blog/res/colors.dart';
 import 'package:blog/res/style.dart';
 import 'package:blog/util/web_util.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:blog/model/collect_model.dart';
 import 'package:flutter_html/flutter_html.dart';
@@ -10,6 +9,7 @@ import 'package:flutter_html/flutter_html.dart';
 /// @date : 2021/08/25
 /// @name : jhf
 /// @description :ListView item
+// ignore: must_be_immutable
 class CollectItemWidget extends StatelessWidget {
   ///收藏信息
   CollectDetail collect;
@@ -70,13 +70,13 @@ class CollectItemWidget extends StatelessWidget {
                   ),
                   Box.vBox10,
                   Visibility(
-                    visible: collect.desc.isNotEmpty,
+                      visible: collect.desc.isNotEmpty,
                       child: Html(
-                    data: collect.desc,
-                    // overflow: TextOverflow.ellipsis,
-                    // maxLines: 2,
-                    // style: Styles.style_6A6969_14,
-                  )),
+                        data: collect.desc,
+                        // overflow: TextOverflow.ellipsis,
+                        // maxLines: 2,
+                        // style: Styles.style_6A6969_14,
+                      )),
                   Box.vBox10,
                   Row(
                     children: [

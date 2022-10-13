@@ -1,11 +1,9 @@
 import 'package:blog/base/get/get_save_state_view.dart';
-import 'package:blog/routes/routes.dart';
 import 'package:blog/ui/page/complex_module/square_page/widget/square_article_item.dart';
 import 'package:blog/util/web_util.dart';
 import 'package:blog/widget/pull_smart_refresher.dart';
 import 'package:blog/widget/ripple_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import 'square_controller.dart';
 

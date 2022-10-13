@@ -23,6 +23,7 @@ class HttpException {
   ///错误信息处理
   ///[error] 错误信息类型
   static NetError handleException(DioError error) {
+    // ignore: unnecessary_type_check
     if (error is DioError) {
       if (error.type == DioErrorType.response) {
         dynamic e = error.message;
@@ -49,7 +50,6 @@ class HttpException {
       return NetError(unknownError, '未知异常');
     }
   }
-
 }
 
 class NetError {

@@ -9,6 +9,7 @@ import 'package:flutter_html/flutter_html.dart';
 /// @date : 2021/9/7
 /// @name : jhf
 /// @description :搜索页面 搜索结果列表Item
+// ignore: must_be_immutable
 class SearchResultItem extends StatelessWidget {
   ///列表数据
   ProjectDetail item;
@@ -33,8 +34,8 @@ class SearchResultItem extends StatelessWidget {
           Visibility(
             visible: item.desc.isNotEmpty,
             child: Container(
-               margin: const EdgeInsets.only(bottom: 6),
-               child: Html(data: item.desc)),
+                margin: const EdgeInsets.only(bottom: 6),
+                child: Html(data: item.desc)),
           ),
           Box.vBox3,
           Row(

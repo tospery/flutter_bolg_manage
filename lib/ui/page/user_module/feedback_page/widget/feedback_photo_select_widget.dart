@@ -1,13 +1,10 @@
 import 'package:blog/base/get/get_common_view.dart';
 import 'package:blog/res/colors.dart';
 import 'package:blog/ui/page/user_module/feedback_page/feedback_controller.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
-class FeedbackPhotoSelectWidget extends GetCommonView<FeedbackController>{
-
-  const FeedbackPhotoSelectWidget({ Key? key }) : super(key: key);
+class FeedbackPhotoSelectWidget extends GetCommonView<FeedbackController> {
+  const FeedbackPhotoSelectWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +61,6 @@ class FeedbackPhotoSelectWidget extends GetCommonView<FeedbackController>{
     );
   }
 
-
   ///最后一张图片显示为+号，其他图片显示为本地图片，并进行裁剪
   ///[pos] 当前位置
   ///此处直接创建对象是因为在增加item时UI必须要重新绘制
@@ -96,5 +92,4 @@ class FeedbackPhotoSelectWidget extends GetCommonView<FeedbackController>{
       );
     }
   }
-
 }

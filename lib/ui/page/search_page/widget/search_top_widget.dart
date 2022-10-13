@@ -6,9 +6,7 @@ import 'package:blog/res/strings.dart';
 import 'package:blog/res/style.dart';
 import 'package:blog/util/formatter/customized_length_formatter.dart';
 import 'package:blog/widget/ripple_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -18,6 +16,7 @@ import '../search_controller.dart';
 /// @date : 2021/9/6
 /// @name : jhf
 /// @description :搜索页面 顶部banner
+// ignore: must_be_immutable
 class SearchTopWidget extends GetCommonView<SearchController> {
   ///搜索点击事件
   final GestureTapCallback? onTap;

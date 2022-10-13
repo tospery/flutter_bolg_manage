@@ -21,8 +21,8 @@ ThemeData get appThemeData => ThemeData(
     primaryColor: kPrimaryColor,
     primaryColorLight: kPrimaryLightColor,
     scaffoldBackgroundColor: Colors.white,
-    accentColor: kPrimaryColor,
     appBarTheme: appBarTheme,
-    textTheme: const TextTheme());
+    textTheme: const TextTheme(),
+    colorScheme: ColorScheme.fromSwatch().copyWith(secondary: kPrimaryColor));
 
 AppBarTheme get appBarTheme => const AppBarTheme();

@@ -20,35 +20,29 @@ class UserInfoPage extends GetCommonView<UserInfoController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Container(
-        child: Column(
-          children: [
-            ToolBar(
-              title: StringStyles.homeUserInfo.tr,
-              backOnTap: () => Get.back()
+      body: Column(
+        children: [
+          ToolBar(
+              title: StringStyles.homeUserInfo.tr, backOnTap: () => Get.back()),
+
+          ///头像
+          Container(
+            margin: const EdgeInsets.only(top: 24),
+            child: HeadCircleWidget(
+              width: 72,
+              height: 72,
             ),
+            decoration: ShadowStyle.black12Circle40(),
+          ),
+          Box.vBox20,
 
-            ///头像
-            Container(
-              margin: const EdgeInsets.only(top: 24),
-              child: HeadCircleWidget(
-                width: 72,
-                height: 72,
-              ),
-              decoration: ShadowStyle.black12Circle40(),
-            ),
-            Box.vBox20,
+          UserInfoWidget(
+            keys: StringStyles.userNickname.tr,
+            value: controller.userInfo.nickname,
+          ),
 
-            UserInfoWidget(
-              keys: StringStyles.userNickname.tr,
-              value: controller.userInfo.nickname,
-            ),
-
-            DividerStyle.divider1HalfPadding20,
-
-
-          ],
-        ),
+          DividerStyle.divider1HalfPadding20,
+        ],
       ),
     );
   }

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'colors.dart';
@@ -31,11 +30,8 @@ class DecorationStyle {
   ///圆角背景
   ///背景：自定义
   ///圆角：自定义
-  static BoxDecoration customizeBorder({
-    Color color = Colors.black,
-    double radius = 20,
-    double border = 1
-  }) {
+  static BoxDecoration customizeBorder(
+      {Color color = Colors.black, double radius = 20, double border = 1}) {
     return BoxDecoration(
         border: Border.all(color: color, width: border),
         borderRadius: BorderRadius.circular((radius)));

@@ -1,4 +1,3 @@
-import 'package:blog/app/package_info.dart';
 import 'package:blog/base/get/get_save_state_view.dart';
 import 'package:blog/res/colors.dart';
 import 'package:blog/res/shadow_style.dart';
@@ -21,7 +20,6 @@ import 'package:get/get.dart';
 class MyPage extends GetSaveView<MyController> {
   const MyPage({Key? key}) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,7 +32,7 @@ class MyPage extends GetSaveView<MyController> {
               ///头像
               GestureDetector(
                 onTap: () => Get.toNamed(Routes.userInfoPage),
-                child:  Container(
+                child: Container(
                   margin: const EdgeInsets.only(left: 24),
                   child: HeadCircleWidget(
                     width: 72,
@@ -96,11 +94,11 @@ class MyPage extends GetSaveView<MyController> {
                 ///分享列表
                 Expanded(
                   flex: 1,
-                  child: Obx(() =>TitleContentWidget(
-                    title: StringStyles.homePartake.tr,
-                    content: '${controller.share}',
-                    onTap: () => Get.toNamed(Routes.sharePage),
-                  )),
+                  child: Obx(() => TitleContentWidget(
+                        title: StringStyles.homePartake.tr,
+                        content: '${controller.share}',
+                        onTap: () => Get.toNamed(Routes.sharePage),
+                      )),
                 ),
 
                 ///积分
@@ -117,10 +115,10 @@ class MyPage extends GetSaveView<MyController> {
                 Expanded(
                     flex: 1,
                     child: Obx(() => TitleContentWidget(
-                      title: StringStyles.homeHistory.tr,
-                      content: '${controller.browseHistory.value}',
-                      onTap: () => Get.toNamed(Routes.historyPage),
-                    ))),
+                          title: StringStyles.homeHistory.tr,
+                          content: '${controller.browseHistory.value}',
+                          onTap: () => Get.toNamed(Routes.historyPage),
+                        ))),
               ],
             ),
           ),
@@ -174,7 +172,7 @@ class MyPage extends GetSaveView<MyController> {
                 text: StringStyles.homeShare.tr,
                 endColor: Colors.black45,
                 onTap: () {
-                  Get.dialog(ShareDialog(url : Constant.downloadUrl));
+                  Get.dialog(ShareDialog(url: Constant.downloadUrl));
                 },
               ),
 

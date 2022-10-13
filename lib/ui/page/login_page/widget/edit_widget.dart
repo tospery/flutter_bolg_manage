@@ -2,13 +2,12 @@ import 'package:blog/res/style.dart';
 import 'package:blog/util/formatter/customized_length_formatter.dart';
 import 'package:blog/util/formatter/customized_text_formatter.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 
 /// @class : EditWidget
 /// @date : 2021/08/17
 /// @name : jhf
 /// @description :输入框样式，左边图标，右边输入框
+// ignore: must_be_immutable
 class EditWidget extends StatefulWidget {
   ///输入框文字改变
   final ValueChanged<String>? onChanged;
@@ -35,10 +34,8 @@ class EditWidget extends StatefulWidget {
 }
 
 class _EditWidgetState extends State<EditWidget> {
-
   bool showPassWord = false;
   bool eyeExpand = true;
-
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +104,7 @@ class _EditWidgetState extends State<EditWidget> {
                 eyeExpand ? Icons.remove_red_eye : Icons.visibility_off,
                 size: 24,
                 color: Colors.white,
-              ) ,
+              ),
               onPressed: () {
                 setState(() {
                   eyeExpand = !eyeExpand;

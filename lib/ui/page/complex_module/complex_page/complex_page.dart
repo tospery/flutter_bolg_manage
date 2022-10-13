@@ -9,7 +9,6 @@ import 'package:blog/ui/page/complex_module/square_page/square_page.dart';
 import 'package:blog/widget/ripple_widget.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:get/get.dart';
 
 /// @class : ComplexPage
@@ -29,6 +28,7 @@ class _ComplexPageState extends State<ComplexPage>
 
   @override
   void initState() {
+    super.initState();
     tabController = TabController(length: 3, vsync: this);
   }
 

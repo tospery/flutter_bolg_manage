@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-import 'package:flutter/widgets.dart';
-
 /// @class : LogoNameWidget
 /// @date : 2021/08/16
 /// @name : jhf

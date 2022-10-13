@@ -2,17 +2,15 @@ import 'package:blog/model/project_model.dart';
 import 'package:blog/res/colors.dart';
 import 'package:blog/res/r.dart';
 import 'package:blog/res/style.dart';
-import 'package:blog/routes/routes.dart';
 import 'package:blog/util/web_util.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:flutter_svg/svg.dart';
 
 /// @class : ProjectListItem
 /// @date : 2021/08/23
 /// @name : jhf
 /// @description :项目列表item widget
+// ignore: must_be_immutable
 class ProjectListItem extends StatelessWidget {
   ProjectDetail detail;
 
@@ -27,7 +25,7 @@ class ProjectListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => WebUtil.toWebPage(detail , onResult: onResult),
+      onTap: () => WebUtil.toWebPage(detail, onResult: onResult),
       child: Container(
         width: double.infinity,
         margin: const EdgeInsets.symmetric(horizontal: 10),
@@ -52,6 +50,7 @@ class ProjectListItem extends StatelessWidget {
                     style: Styles.style_black_16_bold,
                   ),
                   Box.vBox10,
+
                   ///部分内容
                   Text(
                     detail.desc,
@@ -60,11 +59,12 @@ class ProjectListItem extends StatelessWidget {
                     style: Styles.style_6A6969_14,
                   ),
                   Box.vBox10,
+
                   ///作者
                   Row(
                     children: [
                       SvgPicture.asset(
-                          R.assetsImagesProgram,
+                        R.assetsImagesProgram,
                         width: 16,
                       ),
                       Box.hBox10,
@@ -77,6 +77,7 @@ class ProjectListItem extends StatelessWidget {
                     ],
                   ),
                   Box.vBox10,
+
                   ///发布时间
                   Row(
                     children: [
@@ -93,7 +94,6 @@ class ProjectListItem extends StatelessWidget {
                       )
                     ],
                   )
-
                 ],
               ),
             ),
