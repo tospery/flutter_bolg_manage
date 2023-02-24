@@ -44,7 +44,7 @@ class _EditWidgetState extends State<EditWidget> {
       children: [
         Container(
           child: TextField(
-            keyboardType: TextInputType.number,
+            keyboardType: TextInputType.text,
             textAlign: TextAlign.left,
             autofocus: false,
             maxLines: 1,
