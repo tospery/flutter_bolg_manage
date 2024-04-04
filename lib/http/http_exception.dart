@@ -25,7 +25,7 @@ class HttpException {
   static NetError handleException(DioError error) {
     // ignore: unnecessary_type_check
     if (error is DioError) {
-      if (error.type == DioErrorType.response) {
+      if (error.type == DioErrorType.badResponse) {
         dynamic e = error.message;
         if (e is SocketException) {
           return NetError(socketError, '网络异常，请检查你的网络！');
@@ -37,7 +37,7 @@ class HttpException {
           return NetError(parseError, '数据解析错误！');
         }
         return NetError(netError, '网络异常，请检查你的网络！');
-      } else if (error.type == DioErrorType.connectTimeout ||
+      } else if (error.type == DioErrorType.connectionTimeout ||
           error.type == DioErrorType.receiveTimeout) {
         ///  连接超时 || 请求超时 || 响应超时
         return NetError(timeoutError, '连接超时！');

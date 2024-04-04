@@ -6,7 +6,7 @@ import 'package:blog/res/strings.dart';
 import 'package:blog/res/style.dart';
 import 'package:blog/util/formatter/customized_length_formatter.dart';
 import 'package:blog/widget/ripple_widget.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide SearchController;
 import 'package:get/get.dart';
 import 'package:flutter_svg/svg.dart';
 

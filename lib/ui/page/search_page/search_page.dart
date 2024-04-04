@@ -5,7 +5,7 @@ import 'package:blog/ui/page/search_page/widget/search_history_widget.dart';
 import 'package:blog/ui/page/search_page/widget/search_hotword_widget.dart';
 import 'package:blog/ui/page/search_page/widget/search_result_widget.dart';
 import 'package:blog/ui/page/search_page/widget/search_top_widget.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide SearchController;
 
 /// @class : SearchPage
 /// @date : 2021/9/3

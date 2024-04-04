@@ -46,9 +46,9 @@ class HttpRequest {
           return true;
         },
         baseUrl: RequestApi.baseurl,
-        sendTimeout: _sendTimeout,
-        connectTimeout: _connectTimeout,
-        receiveTimeout: _receiveTimeout,
+        sendTimeout: Duration(milliseconds: _sendTimeout),
+        connectTimeout: Duration(milliseconds: _connectTimeout),
+        receiveTimeout: Duration(milliseconds: _receiveTimeout),
       );
       _dio = Dio(options);
     }

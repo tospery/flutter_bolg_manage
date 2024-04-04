@@ -5,7 +5,7 @@ import 'package:blog/res/style.dart';
 import 'package:blog/ui/page/search_page/search_controller.dart';
 import 'package:blog/ui/page/search_page/widget/search_hotword_item.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide SearchController;
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 

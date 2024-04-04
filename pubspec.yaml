@@ -48,11 +48,11 @@ dev_dependencies:
   # rxdart https://pub.flutter-io.cn/packages/rxdart
   rxdart: ^0.27.1
   #GetX状态管理框架 https://pub.flutter-io.cn/packages/get
-  get: 4.3.7
+  get: 4.6.6
   #toast https://pub.flutter-io.cn/packages/fluttertoast
   fluttertoast: ^8.0.8
   # 网络请求库 https://github.com/flutterchina/dio
-  dio: 4.0.0
+  dio: 5.4.2+1
   # 网络检测 https://pub.flutter-io.cn/packages/connectivity
   connectivity: 3.0.6
   # 加载SVG图片 https://pub.flutter-io.cn/packages/flutter_svg
@@ -72,7 +72,7 @@ dev_dependencies:
   #上拉刷新、下拉加载
   pull_to_refresh: ^2.0.0
   #加载html标签
-  flutter_html: ^2.1.2
+  flutter_html: ^2.2.1
   #调用分享平台 https://pub.flutter-io.cn/packages/share
   share: ^2.0.4
   #圖片保存到本地 https://pub.flutter-io.cn/packages/image_gallery_saver
